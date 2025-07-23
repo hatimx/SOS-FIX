@@ -7,12 +7,14 @@
     <title>SOS FIX – Votre urgence, notre priorité</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+
         /* ===== CSS Variables for Themes ===== */
         :root {
             /* Light Mode Colors */
-            --primary-color: #1e3a8a;
-            --secondary-color: #3b82f6;
-            --accent-color: #06b6d4;
+            --primary-color: #426FB6;
+            --secondary-color: #4AC8F5;
+            --accent-color: #4AC8F5;
             --accent-hover: #0891b2;
             --success-color: #10b981;
             --text-color: #333;
@@ -34,7 +36,7 @@
             /* Dark Mode Colors */
             --primary-color: #3b82f6;
             --secondary-color: #1e3a8a;
-            --accent-color: #06b6d4;
+            --accent-color: #4AC8F5;
             --accent-hover: #0891b2;
             --success-color: #10b981;
             --text-color: #f8fafc;
@@ -60,7 +62,8 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+            font-family: "Exo", sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
@@ -106,7 +109,7 @@
         }
 
         .logo img {
-            height: 40px;
+            height: 25px;
             margin-right: 10px;
         }
 
@@ -885,8 +888,9 @@
     <header id="header">
         <nav class="container">
             <div class="logo">
-                <!-- <img src="https://via.placeholder.com/40x40" alt="SOS FIX Logo"> -->
-                SOS FIX
+                <img src="assets/sos-icon.PNG" alt="SOS FIX Logo">
+                <img src="assets/sos-logo.PNG" alt="SOS FIX Logo">
+                <!-- SOS FIX -->
             </div>
             <div class="nav-container">
                 <ul class="nav-links">
@@ -1109,8 +1113,9 @@
             </p>
             <div class="map-container">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17122.077840121052!2d-5.844579148381279!3d35.756043917007645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b875cf04c132d%3A0x76bfc571bfb4e17a!2sTangier!5e0!3m2!1sen!2sma!4v1752850861638!5m2!1sen!2sma"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.050551375013!2d-5.809246625296838!3d35.724975266972116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b812fe4fbbf7f%3A0x4baf5fb241b9d375!2sAv.%20Al%20Qods%2C%20Tanger!5e0!3m2!1sen!2sma!4v1753289550539!5m2!1sen!2sma"
                     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
             </div>
         </div>
     </section>
