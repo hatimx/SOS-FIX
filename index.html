@@ -648,26 +648,28 @@
 
 
 
+
+
+
+
         /* Testimonials Section */
         .testimonials {
             padding: 80px 0;
             background: var(--bg-secondary);
-            overflow: hidden;
         }
 
         .testimonials-container {
             position: relative;
             width: 100%;
-            overflow-x: hidden;
-            padding: 20px 0;
+            overflow: hidden;
+            padding: 20px 60px;
         }
 
         .testimonials-track {
             display: flex;
             gap: 1.5rem;
-            animation: scroll 20s linear infinite;
-            width: calc(280px * 10);
-            will-change: transform;
+            transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+            width: 100%;
         }
 
         .testimonial-card {
@@ -679,12 +681,14 @@
             flex-shrink: 0;
             transition: transform 0.3s;
             border-top: 4px solid var(--accent-color);
+            margin: 0 5px;
         }
 
         .testimonial-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
         }
 
+        /* Fixed Avatar Styling */
         .client-avatar {
             width: 50px;
             height: 50px;
@@ -694,24 +698,29 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
-            color: var(--text-on-dark);
+            color: white;
+            /* Fixed color to ensure visibility */
             font-size: 1.3rem;
         }
 
-        .client-info {
+        /* Fixed Star Rating Colors */
+        .client-rating {
+            color: #FFD700;
+            /* Gold color for stars */
             margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .client-rating .far {
+            color: #FFD700;
+            /* Gold color for empty stars */
+            opacity: 0.3;
         }
 
         .client-info h3 {
             font-size: 1.2rem;
             color: var(--primary-color);
             margin-bottom: 0.5rem;
-        }
-
-        .client-rating {
-            color: #FFD700;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
         }
 
         .client-review {
@@ -721,56 +730,101 @@
             font-size: 0.95rem;
         }
 
-        /* Update the animation timing to account for more cards */
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
+        /* Fixed Button Styling */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            color: white;
+            /* Fixed color to ensure visibility */
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+            opacity: 0.9;
+        }
 
-            100% {
-                transform: translateX(calc(-280px * 7));
-                /* Updated for 7 original cards */
+        .carousel-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-50%) scale(1.05);
+            opacity: 1;
+        }
+
+        .carousel-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: translateY(-50%);
+        }
+
+        .carousel-btn:disabled:hover {
+            background: var(--accent-color);
+            transform: translateY(-50%);
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 1400px) {
+            .testimonial-card {
+                width: 250px;
             }
         }
 
-        @media (min-width: 1200px) {
-            @keyframes scroll {
-                0% {
-                    transform: translateX(0);
-                }
+        @media (max-width: 992px) {
+            .testimonials-container {
+                padding: 20px 50px;
+            }
 
-                100% {
-                    transform: translateX(calc(-300px * 7));
-                    /* Updated for 7 original cards */
-                }
+            .testimonial-card {
+                width: 260px;
             }
         }
 
         @media (max-width: 768px) {
-            @keyframes scroll {
-                0% {
-                    transform: translateX(0);
-                }
+            .testimonials-container {
+                padding: 20px 40px;
+            }
 
-                100% {
-                    transform: translateX(calc(-260px * 7));
-                    /* Updated for 7 original cards */
-                }
+            .testimonial-card {
+                width: 240px;
+            }
+
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
             }
         }
 
         @media (max-width: 576px) {
-            @keyframes scroll {
-                0% {
-                    transform: translateX(0);
-                }
+            .testimonials {
+                padding: 60px 0;
+            }
 
-                100% {
-                    transform: translateX(calc(-240px * 7));
-                    /* Updated for 7 original cards */
-                }
+            .testimonials-container {
+                padding: 20px 30px;
+            }
+
+            .testimonial-card {
+                width: 220px;
             }
         }
+
+
+
+
 
         /* Footer */
         footer {
@@ -1328,8 +1382,12 @@
         <div class="container">
             <h2 class="section-title">Avis Clients</h2>
             <div class="testimonials-container">
+                <button class="carousel-btn prev-btn" aria-label="Previous testimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
                 <div class="testimonials-track">
-                    <!-- Original Testimonial Cards -->
+                    <!-- Testimonial Cards -->
                     <div class="testimonial-card">
                         <div class="client-avatar">
                             <i class="fas fa-user"></i>
@@ -1345,9 +1403,9 @@
                             </div>
                         </div>
                         <p class="client-review">
-                            "SOS FIX a installé notre système de froid industriel avec un professionnalisme
-                            remarquable. Le travail a été fait rapidement et sans aucun problème. Je recommande vivement
-                            leurs services!"
+                            "SOS FIX a installé notre système de froid industriel avec un professionnalisme remarquable.
+                            Le travail a été fait rapidement et sans aucun problème. Je recommande vivement leurs
+                            services!"
                         </p>
                     </div>
 
@@ -1386,12 +1444,11 @@
                             </div>
                         </div>
                         <p class="client-review">
-                            "Nous travaillons avec SOS FIX depuis 2 ans pour la maintenance de nos équipements.
-                            Toujours ponctuels, professionnels et avec des prix très compétitifs."
+                            "Nous travaillons avec SOS FIX depuis 2 ans pour la maintenance de nos équipements. Toujours
+                            ponctuels, professionnels et avec des prix très compétitifs."
                         </p>
                     </div>
 
-                    <!-- New Testimonial Cards -->
                     <div class="testimonial-card">
                         <div class="client-avatar">
                             <i class="fas fa-user"></i>
@@ -1472,7 +1529,6 @@
                         </p>
                     </div>
 
-                    <!-- Duplicated Cards for Infinite Effect -->
                     <div class="testimonial-card">
                         <div class="client-avatar">
                             <i class="fas fa-user"></i>
@@ -1488,32 +1544,16 @@
                             </div>
                         </div>
                         <p class="client-review">
-                            "SOS FIX a installé notre système de froid industriel avec un professionnalisme
-                            remarquable. Le travail a été fait rapidement et sans aucun problème. Je recommande vivement
-                            leurs services!"
-                        </p>
-                    </div>
-
-                    <div class="testimonial-card">
-                        <div class="client-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="client-info">
-                            <h3>Amina</h3>
-                            <div class="client-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                        <p class="client-review">
-                            "Service exceptionnel! L'équipe est très réactive et compétente. Ils ont résolu notre
-                            problème de climatisation en un temps record. Merci SOS FIX!"
+                            "SOS FIX a installé notre système de froid industriel avec un professionnalisme remarquable.
+                            Le travail a été fait rapidement et sans aucun problème. Je recommande vivement leurs
+                            services!"
                         </p>
                     </div>
                 </div>
+
+                <button class="carousel-btn next-btn" aria-label="Next testimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -1729,43 +1769,52 @@
         });
 
 
-
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener("DOMContentLoaded", () => {
             const track = document.querySelector('.testimonials-track');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
             const cards = document.querySelectorAll('.testimonial-card');
-            const container = document.querySelector('.testimonials-container');
 
-            // Clone first few cards for infinite scroll effect
-            for (let i = 0; i < 4; i++) { // Clone first 4 cards
-                track.appendChild(cards[i].cloneNode(true));
-            }
+            let currentIndex = 0;
+            const cardWidth = cards[0].offsetWidth + 24; // width + gap (1.5rem ~ 24px)
 
-            // Pause animation on hover
-            container.addEventListener('mouseenter', () => {
-                track.style.animationPlayState = 'paused';
-            });
+            // Max index calculation based on number of cards and visible width
+            const visibleCards = Math.floor(document.querySelector('.testimonials-container').offsetWidth / cardWidth);
+            const maxIndex = cards.length - visibleCards;
 
-            container.addEventListener('mouseleave', () => {
-                track.style.animationPlayState = 'running';
-            });
+            const updateCarousel = () => {
+                const translateX = -(currentIndex * cardWidth);
+                track.style.transform = `translateX(${translateX}px)`;
 
-            // Adjust animation speed based on screen size
-            function adjustAnimationSpeed() {
-                if (window.innerWidth >= 1200) {
-                    track.style.animationDuration = '25s'; // Slightly slower for more cards
-                } else if (window.innerWidth >= 768) {
-                    track.style.animationDuration = '22s';
-                } else {
-                    track.style.animationDuration = '20s';
+                // Disable buttons at limits
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = currentIndex >= maxIndex;
+            };
+
+            nextBtn.addEventListener('click', () => {
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateCarousel();
                 }
-            }
+            });
 
-            // Initial adjustment
-            adjustAnimationSpeed();
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
 
-            // Adjust on resize
-            window.addEventListener('resize', adjustAnimationSpeed);
+            // Update on window resize to keep functionality responsive
+            window.addEventListener('resize', () => {
+                currentIndex = 0;
+                updateCarousel();
+            });
+
+            // Initial setup
+            updateCarousel();
         });
+
     </script>
 
     <!-- SweetAlert for beautiful alerts -->
