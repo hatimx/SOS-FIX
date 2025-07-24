@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOS FIX – Votre urgence, notre priorité</title>
+    <link rel="icon" type="image/x-icon" href="assets/sos-icon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
@@ -645,6 +646,132 @@
             box-shadow: 0 6px 20px rgba(6, 182, 212, 0.6);
         }
 
+
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+            overflow: hidden;
+        }
+
+        .testimonials-container {
+            position: relative;
+            width: 100%;
+            overflow-x: hidden;
+            padding: 20px 0;
+        }
+
+        .testimonials-track {
+            display: flex;
+            gap: 1.5rem;
+            animation: scroll 20s linear infinite;
+            width: calc(280px * 10);
+            will-change: transform;
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            width: 280px;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .client-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: var(--text-on-dark);
+            font-size: 1.3rem;
+        }
+
+        .client-info {
+            margin-bottom: 1rem;
+        }
+
+        .client-info h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .client-rating {
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .client-review {
+            color: var(--text-color);
+            line-height: 1.6;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        /* Update the animation timing to account for more cards */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-280px * 7));
+                /* Updated for 7 original cards */
+            }
+        }
+
+        @media (min-width: 1200px) {
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-300px * 7));
+                    /* Updated for 7 original cards */
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-260px * 7));
+                    /* Updated for 7 original cards */
+                }
+            }
+        }
+
+        @media (max-width: 576px) {
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-240px * 7));
+                    /* Updated for 7 original cards */
+                }
+            }
+        }
+
         /* Footer */
         footer {
             background: var(--footer-bg);
@@ -1194,6 +1321,202 @@
             </div>
         </div>
     </section>
+
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Avis Clients</h2>
+            <div class="testimonials-container">
+                <div class="testimonials-track">
+                    <!-- Original Testimonial Cards -->
+                    <div class="testimonial-card">
+                        <div class="client-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="client-info">
+                            <h3>Hamza</h3>
+                            <div class="client-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="client-review">
+                            "SOS FIX a installé notre système de froid industriel avec un professionnalisme
+                            remarquable. Le travail a été fait rapidement et sans aucun problème. Je recommande vivement
+                            leurs services!"
+                        </p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="client-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="client-info">
+                            <h3>Sara</h3>
+                            <div class="client-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <p class="client-review">
+                            "Service exceptionnel! L'équipe est très réactive et compétente. Ils ont résolu notre
+                            problème de climatisation en un temps record. Merci SOS FIX!"
+                        </p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="client-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="client-info">
+                            <h3>Abdellah</h3>
+                            <div class="client-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="client-review">
+                            "Nous travaillons avec SOS FIX depuis 2 ans pour la maintenance de nos équipements.
+                            Toujours ponctuels, professionnels et avec des prix très compétitifs."
+                        </p>
+                    </div>
+
+                    <!-- New Testimonial Cards -->
+                    <div class="testimonial-card">
+                        <div class="client-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="client-info">
+                            <h3>Mohamed</h3>
+                            <div class="client-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="client-review">
+                            "Intervention rapide et efficace pour la réparation de notre chambre froide. Techniciens
+                            très compétents et matériel de qualité. Je recommande sans hésitation!"
+                        </p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="client-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="client-info">
+                            <h3>Hajar</h3>
+                            <div class="client-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="client-review">
+                            "Service de maintenance préventive impeccable. Ils ont identifié des problèmes potentiels
+                            avant qu'ils ne deviennent graves. Professionnalisme exceptionnel!"
+                        </p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="client-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="client-info">
+                            <h3>Amine</h3>
+                            <div class="client-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="client-review">
+                            "Bonne expérience globale. Le devis était clair et le travail a été effectué dans les
+                            délais. Petit retard au rendez-vous mais travail de qualité."
+                        </p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="client-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="client-info">
+                            <h3>Manal</h3>
+                            <div class="client-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="client-review">
+                            "Installation de notre système de climatisation centralisée parfaite. Techniciens propres,
+                            polis et extrêmement compétents. Tarifs très raisonnables."
+                        </p>
+                    </div>
+
+                    <!-- Duplicated Cards for Infinite Effect -->
+                    <div class="testimonial-card">
+                        <div class="client-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="client-info">
+                            <h3>Adil</h3>
+                            <div class="client-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="client-review">
+                            "SOS FIX a installé notre système de froid industriel avec un professionnalisme
+                            remarquable. Le travail a été fait rapidement et sans aucun problème. Je recommande vivement
+                            leurs services!"
+                        </p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="client-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="client-info">
+                            <h3>Amina</h3>
+                            <div class="client-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <p class="client-review">
+                            "Service exceptionnel! L'équipe est très réactive et compétente. Ils ont résolu notre
+                            problème de climatisation en un temps record. Merci SOS FIX!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -1404,6 +1727,44 @@
             alert('Merci! Vous allez être redirigé vers WhatsApp pour envoyer votre demande.');
         });
 
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const track = document.querySelector('.testimonials-track');
+            const cards = document.querySelectorAll('.testimonial-card');
+            const container = document.querySelector('.testimonials-container');
+
+            // Clone first few cards for infinite scroll effect
+            for (let i = 0; i < 4; i++) { // Clone first 4 cards
+                track.appendChild(cards[i].cloneNode(true));
+            }
+
+            // Pause animation on hover
+            container.addEventListener('mouseenter', () => {
+                track.style.animationPlayState = 'paused';
+            });
+
+            container.addEventListener('mouseleave', () => {
+                track.style.animationPlayState = 'running';
+            });
+
+            // Adjust animation speed based on screen size
+            function adjustAnimationSpeed() {
+                if (window.innerWidth >= 1200) {
+                    track.style.animationDuration = '25s'; // Slightly slower for more cards
+                } else if (window.innerWidth >= 768) {
+                    track.style.animationDuration = '22s';
+                } else {
+                    track.style.animationDuration = '20s';
+                }
+            }
+
+            // Initial adjustment
+            adjustAnimationSpeed();
+
+            // Adjust on resize
+            window.addEventListener('resize', adjustAnimationSpeed);
+        });
     </script>
 
     <!-- SweetAlert for beautiful alerts -->
